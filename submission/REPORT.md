@@ -5,7 +5,7 @@ Phần phân tích tối đa một trang, không tính output ở phần 5.
 
 **Họ tên / MSSV:** Nguyễn Phúc Bảo / 2A202602925
 **Repo:** https://github.com/PhucBao1/K4-Track02-Day17-NguyenPhucBao-2A202602925-DataPipelineEngineering
-**Commit bài nộp:** `9dd0d1b` (3 commit sửa lỗi: `a1b4ee7`, `f0ee93a`, `9dd0d1b`)
+**Commit bài nộp:** `a97d2f2` (sửa 3 lỗi trong `pipeline/staging.py`, `pipeline/silver.py`, `pipeline/config.py` + bonus)
 **AI đã dùng và phạm vi hỗ trợ (hoặc không dùng):** Claude Code (Claude Opus 5.5) — đọc code, chạy lệnh, đề xuất cách sửa và nháp report; tôi đã đọc lại và giải thích được từng dòng sửa.
 **Nguồn tham khảo khác (nếu có):** Slide Day 17; tài liệu Debezium (event envelope), DuckDB `MERGE INTO`.
 
@@ -115,7 +115,7 @@ Baseline trước khi sửa (bản clone): `RESULT: 8/18 checks — FAILURES ABO
 
 ### Bonus
 
-**B1 — LLM step có cache** (`pipeline/llm_label.py`, commit `987381e`): cache `llm_label_cache`
+**B1 — LLM step có cache** (`pipeline/llm_label.py`, commit `a97d2f2`): cache `llm_label_cache`
 khoá bằng `sha256(text) + model + prompt_version`, lưu cả câu trả lời sai để chạy lại vẫn 0 lần gọi;
 Gold chỉ nhận nhãn thuộc `bug/billing/other`, phần còn lại vào `llm_label_quarantine`;
 ước tính token/chi phí cho phần chưa có trong cache trước khi gọi model.
